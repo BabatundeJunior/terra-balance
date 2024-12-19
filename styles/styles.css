@@ -1,0 +1,299 @@
+/* Terra Balance Colors */
+:root {
+    --primary-color: #6A994E; /* Text Color */
+    --secondary-color: #386641; /* Logo and Buttons */
+    --accent-color: #A7C957; /* Lighter green */
+    --white-color: #FFFFFF;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Customizations */
+.navbar {
+    border-bottom: 1px solid var(--shadow-color);
+}
+
+.navbar-brand {
+    color: var(--secondary-color) !important;
+}
+
+.nav-text {
+    color: var(--primary-color) !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Logo Size Control */
+.navbar-brand img {
+    height: 70px; /* Adjust the height to your preferred size */
+    width: auto;  /* Maintain aspect ratio */
+}
+
+.nav-text:hover {
+    color: var(--accent-color) !important;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    border: none;
+    box-shadow: 0px 4px 8px var(--shadow-color);
+}
+
+.dropdown-item {
+    color: var(--primary-color);
+}
+
+.dropdown-item:hover {
+    background-color: var(--accent-color);
+    color: var(--white-color);
+}
+
+/* Search Form */
+form {
+    display: flex;
+    align-items: center;
+}
+
+input[type="search"] {
+    border: 2px solid var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 30px;
+    width: 200px;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Focus effect on search input */
+input[type="search"]:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0px 0px 5px var(--secondary-color);
+}
+
+.bt-sec {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+.bt-sec:hover {
+    background-color: var(--primary-color) !important;
+    color: var(--white-color) !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: none !important; /* Remove Bootstrap's shadow effect, if any */
+    text-decoration: none !important; /* Remove underline or text styles, if added */
+}
+
+
+.btn-custom {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 30px;
+    padding: 5px 15px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+
+.btn-custom:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+/* Product Images */
+.product-images img {
+    width: 100%;
+    height: auto;
+    border: solid 1px var(--primary-color);
+    border-radius: 5px;
+}
+
+/* Thumbnail images */
+.thumbnail-images img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.thumbnail-images img:hover {
+    opacity: 0.7;
+}
+
+/* Product Information */
+.product-description h2, .product-description h4 {
+    color: #333;
+}
+
+.cart-control button {
+    padding: 10px 20px;
+}
+
+/* Related Products */
+.related-products .card {
+    margin-bottom: 20px;
+}
+
+.related-products .card img {
+    width: 100%;
+    height: auto;
+}
+.increment-btn {
+    padding: 5px 10px; /* Adjust the padding to make it smaller */
+    background-color: var(--secondary-color); /* Ensure it matches your color scheme */
+    color: var(--white-color); /* Text color for contrast */
+}
+#cart-badge {
+    background-color: var(--accent-color); /* Color matching your theme */
+    color: var(--white-color);
+    font-size: 0.8rem;
+    display: none; /* Hidden by default */
+    min-width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    border-radius: 50%;
+}
+
+
+/* Cart Page Styling */
+.cart-page {
+    padding: 30px;
+    background-color: var(--white-color);
+    box-shadow: 0px 4px 8px var(--shadow-color);
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cart Header */
+.cart-page h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Cart Items Container */
+#cart-items {
+    margin-bottom: 20px;
+}
+
+/* Individual Cart Item Styling */
+#cart-items .cart-item {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f7f7f7;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+}
+
+.cart-item h5 {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+}
+
+.cart-item p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.cart-item .remove-btn {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cart-item .remove-btn:hover {
+    background-color: var(--accent-color);
+}
+
+/* Cart Summary */
+.cart-summary {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px var(--shadow-color);
+}
+
+.cart-summary h4 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.cart-summary p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Checkout Button */
+.checkout-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    font-size: 1.2rem;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background-color: var(--accent-color);
+}
+
+/* Quantity Controls */
+.cart-item .increment-btn {
+    padding: 5px 10px; /* Adjust padding for smaller size */
+    background-color: var(--secondary-color); /* Matches the theme */
+    color: var(--white-color); /* Text color for contrast */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart-item .increment-btn:hover {
+    background-color: var(--accent-color);
+}
+
+/* Cart Badge Styling */
+#cart-badge {
+    background-color: var(--accent-color); /* Matching theme */
+    color: var(--white-color);
+    font-size: 0.8rem;
+    display: none; /* Hidden by default */
+    min-width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    border-radius: 50%;
+}
+#cart-items img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
