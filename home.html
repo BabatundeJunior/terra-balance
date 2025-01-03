@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="Terra Balance | Products Page">
+    <meta name="author" content="Terra">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | Terra Balance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">    
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="images/Screenshot 2024-12-16 181623.png" alt="terra-balance logo">
+            </a>
+            <!-- Toggler for mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active nav-text" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-text" href="#">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-text" href="#">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle nav-text" href="#" role="button" data-bs-toggle="dropdown">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Cocoa</a></li>
+                            <li><a class="dropdown-item" href="#">Plantains</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Other Products</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- Search Form -->
+                <form class="d-flex ms-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search Products" aria-label="Search">
+                    <button class="btn btn-outline-success btn-custom" type="submit">Search</button>
+                </form>
+    
+                <!-- Cart Icon -->
+                <div class="ms-3">
+                    <a href="cart.html" class="btn btn-custom ms-3 position-relative">
+                        <img src="images/cart.svg" alt="Cart Icon" style="width: 25px; height: 25px;">
+                        <span id="cart-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill" style="font-size: 0.8rem; display: none;">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <section class="product-description container my-5">
+        <h1>Product Page</h1>
+        <div class="row">
+            <!-- Product Images -->
+            <div class="col-md-6">
+                <div class="product-images">
+                    <!-- Main product image -->
+                    <img id="main-image" src="images/karnel.jpg" alt="Product" class="img-fluid">
+                    <!-- Thumbnail images -->
+                    <div class="thumbnail-images mt-3">
+                        <img src="images/karnel.jpg" alt="Thumbnail 1" class="thumb-image" onclick="changeImage(this)">
+                        <img src="images/tomatoes.jpg" alt="Thumbnail 2" class="thumb-image" onclick="changeImage(this)">
+                        <img src="images/pexels-quang-nguyen-vinh-222549-2131901.jpg" alt="Thumbnail 3" class="thumb-image" onclick="changeImage(this)">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Information -->
+            <div class="col-md-6">
+                <h2 id="product-name">Organic Cocoa</h2>
+                <p id="product-description">Our premium organic cocoa is grown in the heart of nature's purest environments, delivering rich flavor and smooth texture.</p>
+                <h4 id="product-price">$49.99</h4>
+            
+                <!-- Add to Cart / Increment Button -->
+                <div class="cart-control mt-4">
+                    <button id="add-to-cart-btn" class="btn bt-sec">Add to Cart</button>
+                    <div id="increment-btns" class="d-none mt-3 d-flex align-items-center">
+                        <button id="decrease-btn" class="btn bt-sec me-3">-</button> <!-- Move minus button to the left -->
+                        <span id="quantity" class="mx-3">1</span> <!-- Quantity display in the center -->
+                        <button id="increase-btn" class="btn bt-sec">+</button> <!-- Plus button stays on the right -->
+                    </div>
+                </div>
+                
+            </div>
+            
+        
+        <!-- Related Products Section -->
+        <div class="related-products mt-5">
+            <h3>Related Products</h3>
+            <div class="row" id="related-products">
+                <!-- Example related products -->
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/karnel.jpg" class="card-img-top" alt="Related Product 1">
+                        <div class="card-body">
+                            <p class="card-text">Organic Plantains</p>
+                            <button class="btn btn-custom">View</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/pexels-quang-nguyen-vinh-222549-2131901.jpg" class="card-img-top" alt="Related Product 2">
+                        <div class="card-body">
+                            <p class="card-text">Sustainable Tea Bags</p>
+                            <button class="btn btn-custom">View</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/tomatoes.jpg" class="card-img-top" alt="Related Product 3">
+                        <div class="card-body">
+                            <p class="card-text">Eco-Friendly Bags</p>
+                            <button class="btn btn-custom">View</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- JS -->
+
+    <!-- JS & Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+        // Function to save cart to localStorage
+        function saveCart() {
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartIcon();
+        }
+    
+        // Update Cart Icon
+        function updateCartIcon() {
+            const cartBadge = document.getElementById("cart-badge");
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            if (totalItems > 0) {
+                cartBadge.style.display = "block";
+                cartBadge.textContent = totalItems;
+            } else {
+                cartBadge.style.display = "none";
+            }
+        }
+    
+        // Find a cart item by product ID
+        function findCartItem(productId) {
+            return cart.find(item => item.id === productId);
+        }
+    
+        // Handle Add to Cart button click
+        document.getElementById("add-to-cart-btn").addEventListener("click", function() {
+            const productId = "12345";  // Replace with actual product ID
+            const productName = document.getElementById("product-name").textContent;
+            const productPrice = parseFloat(document.getElementById("product-price").textContent.replace('$', ''));
+            const quantity = parseInt(document.getElementById("quantity").value);
+    
+            let cartItem = findCartItem(productId);
+            if (cartItem) {
+                cartItem.quantity += quantity;  // Update quantity if the product is already in the cart
+            } else {
+                cartItem = {
+                    id: productId,
+                    name: productName,
+                    price: productPrice,
+                    quantity: quantity
+                };
+                cart.push(cartItem);  // Add new product to the cart
+            }
+    
+            // Save cart to localStorage
+            saveCart();
+    
+            // Optionally, update the UI (like quantity of items in cart)
+            updateCartIcon();
+        });
+    
+        // Initialize cart icon on page load
+        window.addEventListener("load", function() {
+            updateCartIcon();
+        });
+    </script>
+
+</body>
+</html>

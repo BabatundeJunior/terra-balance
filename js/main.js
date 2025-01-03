@@ -1,113 +1,100 @@
-// Function to change the main product image when a thumbnail is clicked
+// // Function to change the main product image when a thumbnail is clicked
 function changeImage(thumb) {
     const mainImage = document.getElementById("main-image");
     mainImage.src = thumb.src; // Update main image source with clicked thumbnail's source
 }
 
-// Retrieve cart from localStorage or initialize an empty cart
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+// Fetch and display products
+fetch('data/products.json')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data); // Check if the data loads correctly
+    displayProducts(data);
+  })
+  .catch(error => console.error('Error loading JSON:', error));
 
-// Function to update cart icon in the navbar
-function updateCartIcon() {
-    const cartIcon = document.getElementById("cart-badge");
-    const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
-    
-    if (cartCount > 0) {
-        cartIcon.textContent = cartCount; // Show the number of items
-        cartIcon.style.display = "block";  // Ensure the badge is visible
-    } else {
-        cartIcon.textContent = '';        // Hide the number if cart is empty
-        cartIcon.style.display = "none";  // Hide the badge
-    }
+// Function to display products on the page
+function displayProducts(products) {
+  const productsContainer = document.getElementById('products-container');
+  products.forEach(product => {
+    const productCard = `
+      <div class="card" style="width: 18rem;">
+        <img src="${product.main_image}" class="card-img-top" alt="${product.name}">
+        <div class="card-body">
+          <h5 class="card-title">${product.name}</h5>
+          <h6>${product.price}</h6>
+          <a href="detail.html?id=${product.id}" class="btn bt-sec">View Details</a>
+        </div>
+      </div>
+    `;
+    productsContainer.innerHTML += productCard;
+  });
 }
 
-// Function to save the cart to localStorage
-function saveCartToStorage() {
-    localStorage.setItem("cart", JSON.stringify(cart));
-}
-
-// Function to find a product in the cart by its ID
-function findCartItem(productId) {
-    return cart.find(item => item.id === productId);
-}
-
-// Add to Cart button functionality
-document.getElementById("add-to-cart-btn").addEventListener("click", function () {
-    const productId = "12345"; // Replace with actual product ID
-    const productName = document.getElementById("product-name").textContent;
-    const productPrice = document.getElementById("product-price").textContent;
-    const productImage = document.getElementById("main-image").src; // Get the main product image
-    const quantityElement = document.getElementById("quantity");
-    
-    let cartItem = findCartItem(productId);
-    if (cartItem) {
-        // If product already exists in the cart, increase the quantity
-        cartItem.quantity += 1;
-    } else {
-        // If not, add it to the cart
-        cartItem = {
-            id: productId,
-            name: productName,
-            price: parseFloat(productPrice.replace('$', '')), // Remove $ and convert to number
-            image: productImage, // Add the product image URL
-            quantity: 1
-        };
-        cart.push(cartItem);
-    }
-    
-    // Update UI and cart icon
-    quantityElement.textContent = cartItem.quantity;
-    updateCartIcon();
-    
-    // Show the increment/decrement buttons
-    document.getElementById("increment-btns").classList.remove("d-none");
-
-    // Save the updated cart to localStorage
-    saveCartToStorage();
-});
-
-// Increment button functionality
-document.getElementById("increase-btn").addEventListener("click", function () {
-    const productId = "12345"; // Replace with actual product ID
-    const quantityElement = document.getElementById("quantity");
-    
-    let cartItem = findCartItem(productId);
-    if (cartItem) {
-        cartItem.quantity += 1;
-        quantityElement.textContent = cartItem.quantity;
-        updateCartIcon(); // Update the cart icon
-    }
-
-    // Save the updated cart to localStorage
-    saveCartToStorage();
-});
-
-// Decrement button functionality
-document.getElementById("decrease-btn").addEventListener("click", function () {
-    const productId = "12345"; // Replace with actual product ID
-    const quantityElement = document.getElementById("quantity");
-    
-    let cartItem = findCartItem(productId);
-    if (cartItem) {
-        cartItem.quantity -= 1;
+function loadProductDetails(productId) {
+    fetch('data/products.json') // Ensure the correct path
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(products => {
+        console.log("Products data loaded:", products);
+        const product = products.find(p => p.id === productId);
+        if (!product) {
+          console.error(`Product with ID ${productId} not found.`);
+          return;
+        }
+  
+        // Set main product details
+        document.getElementById('main-image').src = product.main_image;
+        document.getElementById('product-name').textContent = product.name;
+        document.getElementById('product-description').textContent = product.description;
+        document.getElementById('product-price').textContent = `$${product.price.toFixed(2)}`;
+  
+        // Load thumbnails
+        const thumbnailContainer = document.getElementById('thumbnail-container');
+        thumbnailContainer.innerHTML = ''; // Clear existing thumbnails
         
-        // If quantity reaches 0, remove item from cart and hide increment buttons
-        if (cartItem.quantity === 0) {
-            cart = cart.filter(item => item.id !== productId); // Remove the item from cart
-            document.getElementById("increment-btns").classList.add("d-none");
+        if (product.variant_images && product.variant_images.length > 0) {
+          product.variant_images.forEach(image => {
+            console.log('Rendering variant image:', image); // Debugging
+        
+            const thumbnail = document.createElement('img');
+            thumbnail.src = image;
+            thumbnail.alt = `Thumbnail for ${product.name}`;
+            thumbnail.className = 'thumb-image';
+            thumbnail.onclick = () => changeImage(thumbnail);
+        
+            thumbnailContainer.appendChild(thumbnail);
+          });
         } else {
-            quantityElement.textContent = cartItem.quantity;
+          console.warn('No variant images found for product:', product.id);
         }
         
-        // Update UI and cart icon
-        updateCartIcon();
-    }
-
-    // Save the updated cart to localStorage
-    saveCartToStorage();
-});
-
-// Update cart contents and icon when the page loads
-window.addEventListener("load", function() {
-    updateCartIcon();
-});
+  
+        // Load related products
+        const relatedProductsContainer = document.getElementById('related-products');
+        relatedProductsContainer.innerHTML = '';
+        products
+          .filter(p => p.id !== productId)
+          .slice(0, 3)
+          .forEach(related => {
+            const relatedCard = `
+              <div class="col-md-3">
+                <div class="card">
+                  <img src="${related.main_image}" class="card-img-top" alt="${related.name}">
+                  <div class="card-body">
+                    <p class="card-text">${related.name}</p>
+                    <button class="btn btn-custom" onclick="loadProductDetails(${related.id})">View</button>
+                  </div>
+                </div>
+              </div>
+            `;
+            relatedProductsContainer.innerHTML += relatedCard;
+          });
+      })
+      .catch(error => console.error('Error loading product details:', error));
+  }
+  

@@ -13,6 +13,9 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
 }
+a {
+    text-decoration: none;
+}
 
 /* Navbar Customizations */
 .navbar {
@@ -144,7 +147,7 @@ input[type="search"]:focus {
     height: auto;
 }
 .increment-btn {
-    padding: 5px 10px; /* Adjust the padding to make it smaller */
+    padding: 3px 5px; /* Adjust the padding to make it smaller */
     background-color: var(--secondary-color); /* Ensure it matches your color scheme */
     color: var(--white-color); /* Text color for contrast */
 }
@@ -296,4 +299,256 @@ input[type="search"]:focus {
     border-radius: 8px;
 }
 
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 3px;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card img {
+    object-fit: contain;
+    height: 200px;
+  }
+  
 
+
+  /* home page styles */
+  .hero {
+    position: relative;
+    text-align: center;
+    background-color: var(--secondary-color);
+}
+
+.hero img {
+    width: 100%;
+    height: 600px; /* Keep your specified height */
+    object-fit: cover;
+    display: block;
+}
+  .hero h1 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--accent2-color);
+    z-index: 1;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); /* Enhances text readability */
+    margin: 0;
+}
+
+.hero-para {
+    font-family: var(--font-heading);
+    position: absolute;
+    font-size: 1.1rem;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--accent2-color);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.hero-buttons {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 1rem;
+}
+
+.hero-buttons .btn {
+    font-family: var(--font-heading);
+    background-color: black; /* Ensures the button stands out */
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hero-buttons .btn:hover {
+    transform: scale(1.05); /* Slightly enlarges the button */
+    background-color: var(--accent3-color); /* Change to a distinct hover color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+        top: 15%; /* Adjust top position */
+    }
+    .hero-para {
+        font-size: 1rem;
+        top: 30%; /* Adjust top position */
+    }
+    .hero-buttons {
+        top: 40%; /* Adjust button position */
+    }
+    .hero-buttons .btn {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+        top: 12%;
+    }
+    .hero-para {
+        font-size: 0.9rem;
+        top: 28%;
+    }
+    .hero-buttons {
+        top: 39%;
+    }
+    .hero-buttons .btn {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+/* Company Brief Section */
+.company-brief {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.brief-contents {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.section-title span {
+    color: var(--primary-color);
+}
+
+.brief-text {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    .brief-text {
+        font-size: 1rem;
+    }
+}
+/* Specialized Farming Section Styles */
+.specialized-farming {
+    background-color: #F7F7F7; /* Slightly off-white for contrast */
+    padding: 4rem 0;
+}
+
+.section-title-ii {
+    font-family: var(--primary-color);
+    text-align: center;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+}
+
+.section-description {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+}
+
+.farming-cards .farming-card {
+    display: block;
+    text-align: center;
+    border: 1px solid var(--shadow-color);
+    border-radius: 10px;
+    padding: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #FFF;
+}
+
+.farming-cards .farming-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.farming-cards .farming-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.farming-cards .farming-card h3 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
+.section-footer {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-style: italic;
+}
+/* featured products styles */
+.featured-card {
+    border: 1px solid var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+}
+
+.featured-card img {
+    max-height: 200px;
+    object-fit: contain;
+    background-color: var(--accent4);
+}
+
+.featured-card .card-title {
+    color: var(--black);
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.featured-card .card-price {
+    font-size: 16px;
+    color: var(--accent3);
+    margin-bottom: 15px;
+}
+
+.featured-card .btn-primary {
+    background-color: var(--accent1);
+    border-color: var(--accent1);
+    transition: background-color 0.3s ease;
+}
+
+.featured-card .btn-primary:hover {
+    background-color: var(--accent2);
+    border-color: var(--accent2);
+}
+
+.featured-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+/* end of home page styles */

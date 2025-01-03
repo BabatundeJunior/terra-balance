@@ -1,0 +1,53 @@
+[
+    {
+      "id": 1,
+      "name": "Organic Cocoa",
+      "description": "Rich flavor and smooth texture.",
+      "price": 49.99,
+      "main_image": "images/karnel.jpg",
+      "variant_images": [
+        "images/pexels-quang-nguyen-vinh-222549-2131901.jpg",
+        "images/pexels-quang-nguyen-vinh-222549-2131901.jpg"
+]    },
+    {
+      "id": 2,
+      "name": "Sustainable Tea Bags",
+      "description": "Eco-friendly and reusable.",
+      "price": 19.99,
+      "main_image": "images/pexels-quang-nguyen-vinh-222549-2131901.jpg",
+      "variant_images": [
+      "images/pexels-quang-nguyen-vinh-222549-2131901.jpg",
+      "images/pexels-quang-nguyen-vinh-222549-2131901.jpg"
+]    },
+    {
+        "id": 3,
+        "name": "Sustainable Tea Bags",
+        "description": "Eco-friendly and reusable.",
+        "price": 19.99,
+        "main_image": "images/pexels-quang-nguyen-vinh-222549-2131901.jpg",
+        "variant_images": [
+          "images/tomatoes.jpg",
+          "images/tomatoes.jpg"
+]      },
+      {
+        "id": 4,
+        "name": "Sustainable Tea Bags",
+        "description": "Eco-friendly and reusable.",
+        "price": 19.99,
+        "main_image": "images/tomatoes.jpg",
+        "variant_images": [
+          "images/tomatoes.jpg",
+          "images/tomatoes.jpg"
+]      },
+      {
+        "id": 5,
+        "name": "Ripe Plantain",
+        "description": "Eco-friendly and reusable.",
+        "price": 19.99,
+        "main_image": "images/pexels-quang-nguyen-vinh-222549-2131901.jpg",
+        "variant_images": [
+          "images/tomatoes.jpg",
+          "images/tomatoes.jpg"
+]      }
+  ]
+  
