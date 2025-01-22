@@ -66,7 +66,7 @@
         <h1 id="product-name"> Detail</h1>
         <div class="row">
           <!-- Product Images -->
-          <div class="col-md-6">
+          <div class="col-md-5">
             <div class="product-images">
               <!-- Main product image -->
               <img id="main-image" src="" alt="Product" class="img-fluid">
@@ -83,14 +83,14 @@
             <p id="product-description"></p>
             <h4 id="product-price"></h4>
       
-            <!-- Add to Cart / Increment Button -->
+            <!-- Add to Cart Button -->
             <div class="cart-control mt-4">
-              <button id="add-to-cart-btn" class="btn bt-sec">Add to Cart</button>
-              <div id="increment-btns" class="d-none mt-3 d-flex align-items-center">
-                <button id="decrease-btn" class="btn bt-sec me-3">-</button>
-                <span id="quantity" class="mx-3">1</span>
-                <button id="increase-btn" class="btn bt-sec">+</button>
-              </div>
+                <button id="add-to-cart-btn" class="btn bt-sec">Add to Cart</button>
+            </div>
+            <div id="add-to-cart-success"></div>
+
+            
+            
             </div>
           </div>
         </div>
@@ -102,6 +102,27 @@
             <!-- Related products will be dynamically added here -->
           </div>
         </div>
+
+        <!-- Customer Reviews Section -->
+        <div class="customer-reviews mt-5">
+          <h3>Customer Reviews</h3>
+          <div class="review">
+              <p class="review-text">"Great product! The quality is amazing, and the delivery was fast."</p>
+              <p class="review-author"><strong>- Jane Doe</strong></p>
+          </div>
+          <hr>
+          <div class="review">
+              <p class="review-text">"Really loved it! Will definitely order again."</p>
+              <p class="review-author"><strong>- John Smith</strong></p>
+          </div>
+          <hr>
+          <div class="review">
+              <p class="review-text">"Excellent service and product, highly recommended!"</p>
+              <p class="review-author"><strong>- Alice Johnson</strong></p>
+          </div>
+      </div>
+
+
       </section>
 
     <!-- JS -->
@@ -109,22 +130,34 @@
     <!-- JS & Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
-    <script>
+    <script> 
         // Extract product ID from URL
         function getProductIdFromURL() {
           const params = new URLSearchParams(window.location.search);
-          return parseInt(params.get('id'), 10); // Convert to integer
+          const id = params.get('id');
+          
+          // Validate and parse the ID
+          if (id && !isNaN(id)) {
+            return parseInt(id, 10); // Convert to integer
+          }
+          return null; // Return null if invalid or missing
         }
       
         const productId = getProductIdFromURL();
         console.log('Product ID:', productId); // Debugging
       
         if (productId) {
-          loadProductDetails(productId);
+          try {
+            loadProductDetails(productId);
+          } catch (error) {
+            console.error('Error loading product details:', error);
+          }
         } else {
-          console.error('No Product ID found in URL.');
+          console.error('Invalid or missing Product ID in URL.');
+          // Optionally redirect to an error page or display a friendly message
         }
       </script>
+      
       
 
 </body>

@@ -552,3 +552,37 @@ input[type="search"]:focus {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 /* end of home page styles */
+
+.add-to-cart-success {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+}
+.customer-reviews {
+    border-top: 2px solid #A7C957;
+    padding-top: 20px;
+}
+
+.review {
+    background: #F2E8CF;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.review-text {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #6A994E;
+}
+
+.review-author {
+    font-size: 1rem;
+    color: #386641;
+    text-align: right;
+}
+
+

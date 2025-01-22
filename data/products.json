@@ -11,7 +11,7 @@
 ]    },
     {
       "id": 2,
-      "name": "Sustainable Tea Bags",
+      "name": "Tea Bags",
       "description": "Eco-friendly and reusable.",
       "price": 19.99,
       "main_image": "images/pexels-quang-nguyen-vinh-222549-2131901.jpg",
@@ -21,7 +21,7 @@
 ]    },
     {
         "id": 3,
-        "name": "Sustainable Tea Bags",
+        "name": "Bags",
         "description": "Eco-friendly and reusable.",
         "price": 19.99,
         "main_image": "images/pexels-quang-nguyen-vinh-222549-2131901.jpg",
@@ -31,7 +31,7 @@
 ]      },
       {
         "id": 4,
-        "name": "Sustainable Tea Bags",
+        "name": "cassava",
         "description": "Eco-friendly and reusable.",
         "price": 19.99,
         "main_image": "images/tomatoes.jpg",
