@@ -586,3 +586,34 @@ input[type="search"]:focus {
 }
 
 
+/* payout styles */
+
+
+
+/* end payout styles */
+
+.form-label {
+    font-weight: 500; /* Slightly bolder labels */
+    color: #495057;
+}
+
+.form-control:focus {
+    border-color: #007bff; /* Blue border on focus */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Blue shadow on focus */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn-primary:hover{
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+.btn-primary:focus{
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+.btn-primary:active{
+    background-color: #005cbf !important;
+    border-color: #0056b3 !important;
+}

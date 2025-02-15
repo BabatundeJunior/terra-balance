@@ -1,7 +1,7 @@
 [
     {
       "id": 1,
-      "name": "Organic Cocoa",
+      "name": "A Basket of Karnel",
       "description": "Rich flavor and smooth texture.",
       "price": 49.99,
       "main_image": "images/karnel.jpg",
@@ -11,10 +11,10 @@
 ]    },
     {
       "id": 2,
-      "name": "Tea Bags",
+      "name": "A Basket of Cassava",
       "description": "Eco-friendly and reusable.",
       "price": 19.99,
-      "main_image": "images/pexels-quang-nguyen-vinh-222549-2131901.jpg",
+      "main_image": "images/casava.jpg",
       "variant_images": [
       "images/pexels-quang-nguyen-vinh-222549-2131901.jpg",
       "images/pexels-quang-nguyen-vinh-222549-2131901.jpg"
@@ -31,7 +31,7 @@
 ]      },
       {
         "id": 4,
-        "name": "cassava",
+        "name": "A Paint Of Tomatoes",
         "description": "Eco-friendly and reusable.",
         "price": 19.99,
         "main_image": "images/tomatoes.jpg",
@@ -41,10 +41,10 @@
 ]      },
       {
         "id": 5,
-        "name": "Ripe Plantain",
+        "name": "Unripe Plantain",
         "description": "Eco-friendly and reusable.",
-        "price": 19.99,
-        "main_image": "images/pexels-quang-nguyen-vinh-222549-2131901.jpg",
+        "price": 45.89,
+        "main_image": "images/plantain.jpg",
         "variant_images": [
           "images/tomatoes.jpg",
           "images/tomatoes.jpg"
