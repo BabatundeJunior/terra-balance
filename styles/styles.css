@@ -617,3 +617,54 @@ input[type="search"]:focus {
     background-color: #005cbf !important;
     border-color: #0056b3 !important;
 }
+footer {
+    background-color: #F7F7F7;
+    color: var(--primary-color);
+    padding: 30px 0;
+    text-align: center;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.footer-links {
+    margin: 15px 0;
+}
+
+.footer-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-links a:hover {
+    color: var(--accent1);
+}
+
+.footer-socials a {
+    margin: 0 10px;
+    font-size: 20px;
+    color: var(--primary-color);
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-socials a:hover {
+    color: var(--accent2);
+}
+
+.footer-text {
+    margin-top: 15px;
+    font-size: 14px;
+    opacity: 0.8;
+}
